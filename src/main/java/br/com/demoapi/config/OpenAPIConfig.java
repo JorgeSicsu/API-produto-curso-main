@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@OpenAPIDefinition(servers = {@Server(url = "/demoapi/", description = "https://api-produto-curso-main-production.up.railway.app")})
+@OpenAPIDefinition(servers = {@Server(url = "/", description = "https://api-produto-curso-main-production.up.railway.app")})
 public class OpenAPIConfig {
 
     @Bean

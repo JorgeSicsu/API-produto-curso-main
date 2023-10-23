@@ -1,5 +1,5 @@
 # API DE PRODUTOS
-## API utilizada no curso de cloud para demonstrar o deploy na cloud AWS.
+## API utilizada no curso de cloud para demonstrar o deploy na cloud RAILWAY.
 
 
 ### Tecnologia utilizadas:

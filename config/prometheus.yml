@@ -5,6 +5,10 @@ scrape_configs:
   - job_name: "api-produto-curso-main"
     metrics_path: "/actuator/prometheus"
     static_configs:
+<<<<<<< HEAD
       - targets: ["api-produto-curso-main-production.up.railway.app"]
+=======
+      - targets: ["https://api-produto-curso-main-production.up.railway.app"]
+>>>>>>> c3161b12fb69fb4ff2957579551033079de4db05
         labels:
           application: "api-produto-curso-main"

@@ -1,0 +1,3 @@
+host.docker.internal:8081
+
+- targets: ["host.docker.internal:8081"]

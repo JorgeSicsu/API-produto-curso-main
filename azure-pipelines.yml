@@ -15,10 +15,11 @@ steps:
 - task: Checkout@1
 
 # Etapa 2: Configurar o JDK 17
-- task: UseJava@1
+- task: UseJavaVersion@1
   inputs:
-    version: '17'
-    distribution: 'Microsoft'
+    versionSpec: '17'
+    jdkArchitecture: 'x64'
+    jdkSourceOption: 'PreInstalled'
 
 # Etapa 3: Build com Maven
 - task: Maven@3

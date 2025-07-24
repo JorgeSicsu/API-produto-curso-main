@@ -59,4 +59,27 @@ public class ProdutoController {
         Produto produtoatualizado = produtoService.salvar(produto);
         return ResponseEntity.ok(produtoatualizado);
     }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Produto> atualizarParcialmente(@PathVariable Long id, @RequestBody Produto produto) {
+        // Simulação de atualização parcial (em um projeto real, você buscaria do banco e aplicaria só os campos não nulos)
+        //return ResponseEntity.ok("Produto " + id + " atualizado parcialmente: " + produto);
+        var produtoOptional = produtoRepository.findById(id);
+        if (produtoOptional.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        Produto produtoExistente = produtoOptional.get();
+
+        if (produto.getNome() != null) {
+            produtoExistente.setNome(produto.getNome());
+        }
+        if (produto.getPreco() != null) {
+            produtoExistente.setPreco(produto.getPreco());
+        }
+        if (produto.getDescricao() != null) {
+            produtoExistente.setDescricao(produto.getDescricao());
+        }
+        Produto atualizado = produtoRepository.save(produtoExistente);
+        return ResponseEntity.ok(atualizado);
+    }
 }
